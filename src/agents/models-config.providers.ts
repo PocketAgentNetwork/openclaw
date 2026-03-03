@@ -872,9 +872,6 @@ export function buildNvidiaProvider(): ProviderConfig {
   return {
     baseUrl: NVIDIA_BASE_URL,
     api: "openai-completions",
-    compat: {
-      maxTokensField: "max_tokens",
-    },
     models: [
       {
         id: NVIDIA_DEFAULT_MODEL_ID,
@@ -884,6 +881,7 @@ export function buildNvidiaProvider(): ProviderConfig {
         cost: NVIDIA_DEFAULT_COST,
         contextWindow: NVIDIA_DEFAULT_CONTEXT_WINDOW,
         maxTokens: NVIDIA_DEFAULT_MAX_TOKENS,
+        compat: { maxTokensField: "max_tokens" },
       },
       {
         id: "meta/llama-3.3-70b-instruct",
@@ -893,6 +891,7 @@ export function buildNvidiaProvider(): ProviderConfig {
         cost: NVIDIA_DEFAULT_COST,
         contextWindow: 131072,
         maxTokens: 4096,
+        compat: { maxTokensField: "max_tokens" },
       },
       {
         id: "nvidia/mistral-nemo-minitron-8b-8k-instruct",
@@ -902,6 +901,7 @@ export function buildNvidiaProvider(): ProviderConfig {
         cost: NVIDIA_DEFAULT_COST,
         contextWindow: 8192,
         maxTokens: 2048,
+        compat: { maxTokensField: "max_tokens" },
       },
     ],
   };

@@ -872,6 +872,9 @@ export function buildNvidiaProvider(): ProviderConfig {
   return {
     baseUrl: NVIDIA_BASE_URL,
     api: "openai-completions",
+    compat: {
+      maxTokensField: "max_tokens",
+    },
     models: [
       {
         id: NVIDIA_DEFAULT_MODEL_ID,
